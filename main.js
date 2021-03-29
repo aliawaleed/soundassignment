@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const phoneIcon = document.getElementsByClassName("phoneIcon")[0]
 
 const audio1 = document.getElementById("audio1")
@@ -31,7 +30,6 @@ audio1.addEventListener("ended", () => {
 
 
 console.log(phoneIcon)
-=======
 let img = document.getElementById("room_map")
 let investigator = document.getElementById("investigatormap")
 let daughter = document.getElementById("daughtermap")
@@ -53,4 +51,3 @@ husband.addEventListener("click", function() {
 babysitter.addEventListener("click", function() {
   img.src = "5.png";
 });
->>>>>>> aeda59fc6543168793314735585f48a6c3b756b0
