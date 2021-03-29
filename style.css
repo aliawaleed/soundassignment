@@ -20,6 +20,7 @@ img {
   width: 70%;
 }
 
+<<<<<<< HEAD
 .container {
   height: 100vh;
   display: flex;
@@ -29,4 +30,8 @@ img {
 
 .first {
   text-align: center;
+=======
+img.roommap, map area{
+    outline: none;
+>>>>>>> aeda59fc6543168793314735585f48a6c3b756b0
 }
