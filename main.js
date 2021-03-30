@@ -76,6 +76,7 @@ audio1.addEventListener("ended", () => {
     firstBlock.style.display = "none"
     secondBlock.style.display = "block"
     nav.style.display = "block"
+    img.src = "1.png"
     currentAudio = audio2;
     currentAudio.play()
 })
@@ -179,5 +180,49 @@ babysitter.addEventListener("click", function() {
 });
 
 audio2.addEventListener("timeupdate",() => {
-  // console.log(audio2.currentTime)
+  const timeNow = Math.floor(audio2.currentTime)
+  switch (timeNow) {
+    case 0:
+      img.src = "1.png"
+      break;
+    
+      case 30:
+        img.src = "2.png"
+        break;
+      
+      case 36:
+        img.src = "4.png"
+        break;
+      
+      case 42:
+        img.src = "5.png";
+        break;
+
+      case 51:
+        img.src = "3.png"
+        break;
+      
+      case 75:
+        img.src = "4.png"
+        break;
+      
+      case 93:
+        img.src = "5.png"
+        break;
+      
+      case 122:
+        img.src = "4.png"
+
+      case 141:
+        img.src = "5.png"
+        break;
+      
+      case 158:
+        img.src = "3.png"
+        break;
+  
+    default:
+      break;
+  }
+
 })
