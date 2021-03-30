@@ -15,6 +15,8 @@ const audioClips = [audio1, audio2, audio3, audio4]
 const firstBlock = document.getElementById("first")
 const secondBlock = document.getElementById("story")
 const nav = document.getElementById("nav")
+const thirdBlock = document.getElementById("third")
+const revealBlock = document.getElementById("reveal")
 
 // images and maps
 let img = document.getElementById("room_map")
@@ -28,6 +30,7 @@ let arrivalButton = document.getElementById("arrival")
 let introductionButton = document.getElementById("introduction")
 let interrogation1Button = document.getElementById("interrogation1")
 let interrogation2Button = document.getElementById("interrogation2")
+
 
 arrivalButton.addEventListener("click", () => {
   currPosition = 0
@@ -55,30 +58,38 @@ interrogation2Button.addEventListener("click", () => {
 secondBlock.style.display = "block"
 secondBlock.style.display = "none"
 nav.style.display = "none"
+thirdBlock.style.display = "none"
+revealBlock.style.display = "none"
 
 // audio interactions
-phoneIcon.addEventListener("click",() => {
-    audio1.play()
-    currentAudio = audio1
-})
+audio1.play()
+currentAudio = audio1
 
-// document.body.onkeyup = function(e) {
-//     if (e.keyCode == 80) {
-//         if (currentAudio) {
-//             currentAudio.pause()
-//             // currentAudio = null
-//         }
-//     }
-// }
+phoneIcon.addEventListener("click",() => {
+})
 
 audio1.addEventListener("ended", () => {
     console.log("audio finished playing")
     firstBlock.style.display = "none"
     secondBlock.style.display = "block"
     nav.style.display = "block"
-    img.src = "1.png"
+    // img.src = "1.png"
     currentAudio = audio2;
     currentAudio.play()
+})
+
+audio2.addEventListener("ended",() => {
+  img.src = "1.png"
+  secondBlock.style.display = "none"
+  nav.style.display = "none"
+  thirdBlock.style.display = "block"
+  currentAudio = audio3;
+  currentAudio.play()
+})
+
+audio3.addEventListener("ended", () => {
+  audio3.controls = false
+  document.getElementById("suspects").style.display = "block"
 })
 
 
@@ -226,3 +237,31 @@ audio2.addEventListener("timeupdate",() => {
   }
 
 })
+
+// suspect selections
+const daughterSus = document.getElementById("daughter")
+const husbandSus = document.getElementById("father")
+const babysitterSus = document.getElementById("babysitter")
+
+daughterSus.addEventListener("click", () => {
+  daughterSus.style.border = "3px solid red"
+  reveal()
+})
+
+husbandSus.addEventListener("click", () => {
+  husbandSus.style.border = "3px solid red"
+  reveal()
+})
+
+babysitterSus.addEventListener("click", () => {
+  babysitterSus.style.border = "3px solid red"
+  reveal()
+})
+
+const reveal  = () => {
+  revealBlock.style.display = "block"
+  const revealButton = document.getElementById("revealButton")
+  revealBlock.addEventListener("click", () => {
+    audio4.play()
+  })
+}
