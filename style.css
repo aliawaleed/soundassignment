@@ -20,6 +20,10 @@ img {
   width: 70%;
 }
 
+img.roommap, map area{
+    outline: none;
+}
+
 <<<<<<< HEAD
 .container {
   height: 100vh;
