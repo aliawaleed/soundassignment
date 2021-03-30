@@ -7,7 +7,7 @@ const audio3 = document.getElementById("audio3")
 const audio4 = document.getElementById("audio4")
 
 // states
-let currentAudio =  audio2;
+// let currentAudio =  audio2;
 let currPosition = -1; // 0 -> arrival, 1 -> introduction, 2 -> interrogation1, 3 -> interrogation2
 
 const audioClips = [audio1, audio2, audio3, audio4]
@@ -62,10 +62,10 @@ thirdBlock.style.display = "none"
 revealBlock.style.display = "none"
 
 // audio interactions
-audio1.play()
-currentAudio = audio1
 
 phoneIcon.addEventListener("click",() => {
+  audio1.play()
+  currentAudio = audio1
 })
 
 audio1.addEventListener("ended", () => {
