@@ -20,6 +20,11 @@ img {
   width: 70%;
 }
 
+img.roommap,
+map area {
+  outline: none;
+}
+
 .container {
   height: 100vh;
   display: flex;
