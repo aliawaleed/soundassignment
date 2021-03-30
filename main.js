@@ -10,6 +10,10 @@ const audioClips = [audio1, audio2, audio3, audio4]
 // states
 let currentAudio = null;
 
+// story blocks
+const firstBlock = document.getElementById("first")
+const secondBlock = document.getElementById("story")
+
 phoneIcon.addEventListener("click",() => {
     audio1.play()
     currentAudio = audio1
@@ -26,10 +30,10 @@ document.body.onkeyup = function(e) {
 
 audio1.addEventListener("ended", () => {
     console.log("audio finished playing")
+    firstBlock.style.display = "none"
 })
 
 
-console.log(phoneIcon)
 let img = document.getElementById("room_map")
 let investigator = document.getElementById("investigatormap")
 let daughter = document.getElementById("daughtermap")

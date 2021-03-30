@@ -20,18 +20,19 @@ img {
   width: 70%;
 }
 
-<<<<<<< HEAD
 .container {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
-.first {
-  text-align: center;
-=======
-img.roommap, map area{
-    outline: none;
->>>>>>> aeda59fc6543168793314735585f48a6c3b756b0
+img.roommap,
+map area {
+  outline: none;
+}
+
+.nav {
 }
