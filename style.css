@@ -47,7 +47,23 @@ map area {
 }
 
 .suspect:hover {
-  border: 3px solid green;
+  animation-name: select;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes select {
+  0% {
+    width: 31%;
+  }
+
+  50% {
+    width: 32%;
+  }
+
+  100% {
+    width: 31%;
+  }
 }
 
 .navButton {
@@ -57,8 +73,25 @@ map area {
   border-radius: 10px;
   width: 100px;
   margin: 10px;
+  background-color: #4972a5;
+  color: wheat;
 }
 
 .navButton:hover {
+  background-color: rgb(197, 0, 0);
+}
+
+#revealButton {
+  background-color: red;
+  height: 40px;
+  border: 0;
+  border-radius: 10px;
+  width: 100px;
+  margin: 10px;
+  background-color: #4972a5;
+  color: wheat;
+}
+
+#revealButton:hover {
   background-color: rgb(197, 0, 0);
 }

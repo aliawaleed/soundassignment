@@ -6,11 +6,11 @@ const audio2 = document.getElementById("audio2")
 const audio3 = document.getElementById("audio3")
 const audio4 = document.getElementById("audio4")
 
+const audioClips = [audio1, audio2, audio3, audio4]
 // states
 // let currentAudio =  audio2;
-let currPosition = -1; // 0 -> arrival, 1 -> introduction, 2 -> interrogation1, 3 -> interrogation2
 
-const audioClips = [audio1, audio2, audio3, audio4]
+let currPosition = -1; // 0 -> arrival, 1 -> introduction, 2 -> interrogation1, 3 -> interrogation2
 
 const firstBlock = document.getElementById("first")
 const secondBlock = document.getElementById("story")
@@ -55,7 +55,7 @@ interrogation2Button.addEventListener("click", () => {
 
 // onLoad 
 // firstBlock.style.display = "none"
-secondBlock.style.display = "block"
+secondBlock.style.display = "none"
 secondBlock.style.display = "none"
 nav.style.display = "none"
 thirdBlock.style.display = "none"
@@ -73,13 +73,13 @@ audio1.addEventListener("ended", () => {
     firstBlock.style.display = "none"
     secondBlock.style.display = "block"
     nav.style.display = "block"
-    // img.src = "1.png"
+    // img.src = "full.png"
     currentAudio = audio2;
     currentAudio.play()
 })
 
 audio2.addEventListener("ended",() => {
-  img.src = "1.png"
+  img.src = "./images/full.png"
   secondBlock.style.display = "none"
   nav.style.display = "none"
   thirdBlock.style.display = "block"
@@ -95,7 +95,7 @@ audio3.addEventListener("ended", () => {
 
 // story interactions
 investigator.addEventListener("click", function() {
-  img.src = "2.png";
+  img.src = "./images/inv.png";
   switch (currPosition) {
     case 0:
       currentAudio.currentTime = 0
@@ -119,7 +119,7 @@ investigator.addEventListener("click", function() {
 });
 
 daughter.addEventListener("click", function() {
-  img.src = "3.png";
+  img.src = "./images/daughter.png";
   switch (currPosition) {
       case 0:
         // currentAudio.currentTime = 30
@@ -143,7 +143,7 @@ daughter.addEventListener("click", function() {
 });
 
 husband.addEventListener("click", function() {
-  img.src = "4.png";
+  img.src = "./images/father.png";
   switch (currPosition) {
       case 0:
         // currentAudio.currentTime = 0
@@ -167,7 +167,7 @@ husband.addEventListener("click", function() {
 });
 
 babysitter.addEventListener("click", function() {
-  img.src = "5.png";
+  img.src = "./images/babysitter.png";
   switch (currPosition) {
       case 0:
         // currentAudio.currentTime = 0
@@ -193,45 +193,134 @@ babysitter.addEventListener("click", function() {
 audio2.addEventListener("timeupdate",() => {
   const timeNow = Math.floor(audio2.currentTime)
   switch (timeNow) {
-    case 0:
-      img.src = "1.png"
+    case 0: {
+      img.src = "./images/full.png"
       break;
-    
-      case 30:
-        img.src = "2.png"
-        break;
-      
-      case 36:
-        img.src = "4.png"
-        break;
-      
-      case 42:
-        img.src = "5.png";
-        break;
-
-      case 51:
-        img.src = "3.png"
-        break;
-      
-      case 75:
-        img.src = "4.png"
-        break;
-      
-      case 93:
-        img.src = "5.png"
-        break;
-      
-      case 122:
-        img.src = "4.png"
-
-      case 141:
-        img.src = "5.png"
-        break;
-      
-      case 158:
-        img.src = "3.png"
-        break;
-  
+    }
+    case 14: {
+      img.src = "./images/inv.png"
+      break;
+    }
+    case 33: {
+      img.src = "./images/daughter.png"
+      break;
+    }
+    case 37: {
+      img.src = "./images/inv.png"
+      break;
+    }
+    case 40: {
+      img.src = "./images/father.png"
+      break;
+    }
+    case 42: {
+      img.src = "./images/inv.png"
+      break;
+    }
+    case 43: {
+      img.src = "./images/babysitter.png"
+      break;
+    }
+    case 46: {
+      img.src = "./images/inv.png"
+      break;
+    }
+    case 50: {
+      img.src = "./images/daughter.png"
+      break;
+    }
+    case 53: {
+      img.src = "./images/school.png"
+      break;
+    }
+    case 57: {
+      img.src = "./images/clinic.png"
+      break;
+    }
+    case 60: {
+      img.src = "./images/coffee.png"
+      break;
+    }
+    case 64: {
+      img.src = "./images/daughter.png"
+      break;
+    }
+    case 74: {
+      img.src = "./images/inv.png"
+      break;
+    }
+    case 77: {
+      img.src = "./images/father.png"
+      break;
+    }
+    case 80: {
+      img.src = "./images/meeting.png"
+      break;
+    }
+    case 83: {
+      img.src = "./images/father.png"
+      break;
+    }
+    case 92: {
+      img.src = "./images/inv.png"
+      break;
+    }
+    case 97: {
+      img.src = "./images/babysitter.png"
+      break;
+    }
+    case 98: {
+      img.src = "./images/son.png"
+      break;
+    }
+    case 103: {
+      img.src = "./images/grocery.png"
+      break;
+    }
+    case 107: {
+      img.src = "./images/babysitter.png"
+      break;
+    }
+    case 110: {
+      img.src = "./images/inv.png"
+      break;
+    }
+    case 113: {
+      img.src = "./images/babysitter.png"
+      break;
+    }
+    case 120: {
+      img.src = "./images/inv.png"
+      break;
+    }
+    case 129: {
+      img.src = "./images/father.png"
+      break;
+    }
+    case 140 : {
+      img.src = "./images/inv.png"
+      break;
+    }
+    case 148: {
+      img.src = "./images/babysitter.png"
+      break;
+    }
+    case 157: {
+      img.src = "./images/inv.png"
+      break;
+    }
+    case 164: {
+      img.src = "./images/daughter.png"
+      break;
+    }
+    case 167: {
+      img.src = "./images/inv.png"
+      break;
+    }
+    case 170: {
+      img.src = "./images/daughter.png"
+      break;
+    }
     default:
       break;
   }
@@ -244,17 +333,17 @@ const husbandSus = document.getElementById("father")
 const babysitterSus = document.getElementById("babysitter")
 
 daughterSus.addEventListener("click", () => {
-  daughterSus.style.border = "3px solid red"
+  daughterSus.style.filter = "grayscale(100%)"
   reveal()
 })
 
 husbandSus.addEventListener("click", () => {
-  husbandSus.style.border = "3px solid red"
+  husbandSus.style.filter = "grayscale(100%)"
   reveal()
 })
 
 babysitterSus.addEventListener("click", () => {
-  babysitterSus.style.border = "3px solid red"
+  babysitterSus.style.filter = "grayscale(100%)"
   reveal()
 })
 
